@@ -78,13 +78,6 @@ namespace EventsAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
-            var exist = _context.Users.Where(x => x.Email == user.Email).Count<User>();
-            if (exist >= 1)
-            {
-                return NoContent();
-            }
-
-            user.Ativo = true;
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
