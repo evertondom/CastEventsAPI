@@ -78,6 +78,8 @@ namespace EventsAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+            user.Ativo = true;
+            user.Funcionario = false;
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
