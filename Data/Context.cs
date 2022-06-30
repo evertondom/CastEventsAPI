@@ -14,5 +14,14 @@ namespace EventsAPI.Data
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Ingresso>()
+                .HasOne(ingresso => ingresso.Evento)
+                .WithMany(evento => evento.Ingressos)
+                .HasForeignKey(ingresso => ingresso.EventoId);
+        }
     }
 }
