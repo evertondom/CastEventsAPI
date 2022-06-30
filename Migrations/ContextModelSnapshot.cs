@@ -26,9 +26,6 @@ namespace EventsAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CapacidadeTotal")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
@@ -37,6 +34,9 @@ namespace EventsAPI.Migrations
 
                     b.Property<string>("ImagemUrl")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IngressosDisponiveis")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -56,17 +56,8 @@ namespace EventsAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Area")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("EventoId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Posicao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("ValorIngresso")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -139,7 +130,7 @@ namespace EventsAPI.Migrations
             modelBuilder.Entity("EventsAPI.Models.Ingresso", b =>
                 {
                     b.HasOne("EventsAPI.Models.Evento", "Evento")
-                        .WithMany()
+                        .WithMany("Ingressos")
                         .HasForeignKey("EventoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -164,6 +155,11 @@ namespace EventsAPI.Migrations
                     b.Navigation("Ingresso");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EventsAPI.Models.Evento", b =>
+                {
+                    b.Navigation("Ingressos");
                 });
 #pragma warning restore 612, 618
         }

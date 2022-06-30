@@ -132,3 +132,5 @@ C:\Users\rodri\Documents\Projeto Final\EventsAPI\EventsAPI\bin\Debug\net5.0\zh-H
 C:\Users\rodri\Documents\Projeto Final\EventsAPI\EventsAPI\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\rodri\Documents\Projeto Final\EventsAPI\EventsAPI\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\rodri\Documents\Projeto Final\EventsAPI\EventsAPI\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+C:\Users\rodri\Documents\Projeto Final\EventsAPI\EventsAPI\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\rodri\Documents\Projeto Final\EventsAPI\EventsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll

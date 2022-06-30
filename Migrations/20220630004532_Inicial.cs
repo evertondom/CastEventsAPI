@@ -8,17 +8,21 @@ namespace EventsAPI.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Generos",
+                name: "Eventos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClassificacaoIndicativa = table.Column<int>(type: "int", nullable: false)
+                    IngressosDisponiveis = table.Column<int>(type: "int", nullable: false),
+                    ImagemUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Data = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ValorIngresso = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Generos", x => x.Id);
+                    table.PrimaryKey("PK_Eventos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -43,37 +47,11 @@ namespace EventsAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Eventos",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CapacidadeTotal = table.Column<int>(type: "int", nullable: false),
-                    Data = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GeneroId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Eventos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Eventos_Generos_GeneroId",
-                        column: x => x.GeneroId,
-                        principalTable: "Generos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Ingressos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Area = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Posicao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ValorIngresso = table.Column<double>(type: "float", nullable: false),
                     EventoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -114,11 +92,6 @@ namespace EventsAPI.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Eventos_GeneroId",
-                table: "Eventos",
-                column: "GeneroId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Ingressos_EventoId",
                 table: "Ingressos",
                 column: "EventoId");
@@ -147,9 +120,6 @@ namespace EventsAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "Eventos");
-
-            migrationBuilder.DropTable(
-                name: "Generos");
         }
     }
 }

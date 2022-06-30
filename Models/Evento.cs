@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace EventsAPI.Models
 {
@@ -6,10 +8,12 @@ namespace EventsAPI.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public int CapacidadeTotal { get; set; }
+        public int IngressosDisponiveis { get; set; }
         public string ImagemUrl { get; set; }
         public DateTime Data { get; set; }
         public string Descricao { get; set; }
         public double ValorIngresso { get; set; }
+        [JsonIgnore]
+        public virtual IList<Ingresso> Ingressos { get; set; }
     }
 }
