@@ -9313,23 +9313,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rodri\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\JonyE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rodri\\Documents\\Projeto Final\\EventsAPI\\EventsAPI\\EventsAPI.csproj",
+      "projectUniqueName": "C:\\Users\\JonyE\\Desktop\\Back de Events\\EventAPI\\EventsAPI.csproj",
       "projectName": "EventsAPI",
-      "projectPath": "C:\\Users\\rodri\\Documents\\Projeto Final\\EventsAPI\\EventsAPI\\EventsAPI.csproj",
-      "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rodri\\Documents\\Projeto Final\\EventsAPI\\EventsAPI\\obj\\",
+      "projectPath": "C:\\Users\\JonyE\\Desktop\\Back de Events\\EventAPI\\EventsAPI.csproj",
+      "packagesPath": "C:\\Users\\JonyE\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JonyE\\Desktop\\Back de Events\\EventAPI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JonyE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9410,7 +9406,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
